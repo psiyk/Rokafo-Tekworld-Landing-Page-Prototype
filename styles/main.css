@@ -405,3 +405,9 @@ p.wrapper {
   margin: 0 auto;
   color: var(--color-text-dark);
 }
+.why h2 span {
+  /* font-weight: normal; */
+  /* font-weight: bold; */
+  font-style: italic;
+  font-family: var(--font-family-serif);
+}
