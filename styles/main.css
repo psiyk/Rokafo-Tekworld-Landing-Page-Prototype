@@ -374,16 +374,43 @@ p.wrapper {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--size-4xl), 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: repeat(3, var(--size-4xl));
+  gap: var(--space-md);
+  grid-template-areas:
+    "c s s"
+    "c i n"
+    /* "c i n" */
+    "t t l";
+  border-radius: var(--space-md);
+  overflow: hidden;
+  border: var(--bd1) var(--color-border);
 }
-/* .service-grid .card { */
-/* background-color: var(--color-muted-bg); */
-/* border-radius: var(--space-sm);
-  padding: var(--space-lg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; */
-/* } */
-.service-grid .icon {
+.service-item {
+  /* grid-area: ; */
+  /* border: 1px solid #000; */
+  background-color: var(--color-muted-bg);
+}
+.service-item.cctv {
+  grid-area: c;
+}
+.service-item.solar {
+  grid-area: s;
+}
+.service-item.it-support {
+  grid-area: i;
+}
+.service-item.networking {
+  grid-area: n;
+}
+.service-item.laptop-repair {
+  grid-area: l;
+}
+.service-item.training {
+  grid-area: t;
+}
+
+.service-item. .service-grid .icon {
   width: var(--size-2xl);
   height: var(--size-2xl);
   display: flex;
@@ -599,10 +626,24 @@ h2.sub-title span {
 .projects .section-wrapper p {
   color: var(--color-accent-light);
 }
-.projects .section-wrapper .sub-title h2 {
+.projects .section-wrapper h2.sub-title {
   background-image: linear-gradient(
     to right,
     var(--color-accent-light),
     var(--color-text-dark)
   );
+}
+
+.projects .section-wrapper p.sec-label {
+  text-align: right;
+}
+.projects .section-wrapper h2.sub-title {
+  /* border: 1px solid; */
+  margin-inline: auto 0;
+  text-align: right;
+}
+.projects .section-wrapper p.wrapper {
+  max-width: 60ch;
+  text-align: right;
+  margin-inline: auto 0;
 }
